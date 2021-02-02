@@ -74,45 +74,38 @@ function CreateOrUpdateForm(props) {
             <Row>
                 <Col>
                     <Form.Label>First name</Form.Label>
-                    <Form.Control placeholder="First name" value={employee.firstName}/>
+                    <Form.Control placeholder="First name" value={employee.firstName} />
                 </Col>
                 <Col>
                     <Form.Label>Last name</Form.Label>
-                    <Form.Control placeholder="Last name" value={employee.lastName}/>
+                    <Form.Control placeholder="Last name" value={employee.lastName} />
                 </Col>
             </Row>
             <br />
             <Form.Row>
-            <Form.Group as={Col} controlId="validationCustomUsername">
-                <Form.Label>Username</Form.Label>
-                <InputGroup>
-                    <InputGroup.Prepend>
-                        <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
-                    </InputGroup.Prepend>
-                    <Form.Control
-                        type="text"
-                        placeholder="Username"
-                        aria-describedby="inputGroupPrepend"
-                        value={employee.username}
-                        required
-                    />
-                    <Form.Control.Feedback type="invalid">
-                        Please choose a username.
+                <Form.Group as={Col} controlId="validationCustomUsername">
+                    <Form.Label>Username</Form.Label>
+                    <InputGroup>
+                        <InputGroup.Prepend>
+                            <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
+                        </InputGroup.Prepend>
+                        <Form.Control
+                            type="text"
+                            placeholder="Username"
+                            aria-describedby="inputGroupPrepend"
+                            value={employee.username}
+                            required
+                        />
+                        <Form.Control.Feedback type="invalid">
+                            Please choose a username.
                     </Form.Control.Feedback>
-                </InputGroup>
-            </Form.Group>
-            <Form.Group as={Col} controlId="formBirthdate">
-                <Form.Label>Birthdate</Form.Label>
-                <Form.Control type="date" placeholder="Birthdate" value={employee.birthdate} />
-            </Form.Group>
+                    </InputGroup>
+                </Form.Group>
+                <Form.Group as={Col} controlId="formBirthdate">
+                    <Form.Label>Birthdate</Form.Label>
+                    <Form.Control type="date" placeholder="Birthdate" value={employee.birthdate} />
+                </Form.Group>
             </Form.Row>
-            <Form.Group controlId="formBasicEmail">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" value={employee.email} />
-                <Form.Text className="text-muted">
-                    E.g.: john@doe.com
-                </Form.Text>
-            </Form.Group>
             <Form.Group controlId="formBasicPosition">
                 <Form.Label>Position</Form.Label>
                 <Form.Control type="text" placeholder="Position (e.g Software Developer)" value={employee.position} />
