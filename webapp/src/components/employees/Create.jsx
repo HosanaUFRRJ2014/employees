@@ -56,7 +56,12 @@ export class CreateOrUpdateModal extends React.Component {
                     <Modal.Title>{modalTitle}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <CreateOrUpdateForm handleClose={handleClose} applyReadOnlyFields={applyReadOnlyFields} isUpdate={true} employee={employee} existingUsernames={existingUsernames} />
+                    <CreateOrUpdateForm 
+                        handleClose={handleClose} 
+                        applyReadOnlyFields={applyReadOnlyFields} 
+                        isUpdate={isUpdate} 
+                        employee={employee} 
+                        existingUsernames={existingUsernames} />
                 </Modal.Body>
                 {/*<Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
