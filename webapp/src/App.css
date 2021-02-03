@@ -37,10 +37,19 @@
   }
 }
 
+
+.empty-div {
+  padding-top: 10%;
+  border-radius: 1%;
+  width: 80%;
+  margin: auto;
+  background-color: lightgray;
+}
+
 .create-search-employee {
   width: 80%;
   margin: auto;
-  padding-top: 10%;
+  padding-top: 0.5%;
   position: relative;
   display: flex;
   flex-wrap: wrap;

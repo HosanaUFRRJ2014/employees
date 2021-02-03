@@ -12,7 +12,7 @@ export function List(props) {
         setShow(true);
     };
 
-    const { employees } = props;
+    const { employees, existingUsernames } = props;
     const listItems = employees.map((employee, i) =>
         <tr key={`list-employee-${i}`} onClick={() => handleShow(employee)}>
             <td>{ employee.id }</td>
@@ -46,6 +46,9 @@ export function List(props) {
         handleClose={handleClose}
         modalTitle={"Update Employee"}
         employee={selectedEmployee} 
+        existingUsernames={existingUsernames}
+        applyReadOnlyFields={true}
+        isUpdate={true}
         />
         </>
     );
