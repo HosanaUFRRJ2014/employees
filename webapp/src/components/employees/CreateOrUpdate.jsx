@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Formik } from 'formik';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import { Button, Col, Form, InputGroup, Modal, Row } from 'react-bootstrap';
 import { createEmployee } from "../../api/create";
 import { updateEmployee } from '../../api/update';
@@ -18,7 +20,7 @@ export function Create(props) {
                 variant="primary"
                 size="sm"
                 onClick={handleShow}>
-                + Register new
+                 <FontAwesomeIcon icon={"user-plus"} /> Register new
             </Button>
             <CreateOrUpdateModal
                 show={show}
@@ -204,13 +206,20 @@ class CreateOrUpdateForm extends React.Component {
                         </Form.Row>
                         <Form.Group controlId="formBasicPosition">
                             <Form.Label>Position</Form.Label>
-                            <Form.Control
-                                name={"position"}
-                                type="text"
-                                placeholder="Position (e.g Software Developer)"
-                                onChange={handleChange}
-                                value={values.position}
-                                required />
+                            <InputGroup>
+                                <InputGroup.Prepend>
+                                        <InputGroup.Text id="inputGroupPrepend">
+                                            <FontAwesomeIcon icon={"briefcase"} />
+                                        </InputGroup.Text>
+                                    </InputGroup.Prepend>
+                                <Form.Control
+                                    name={"position"}
+                                    type="text"
+                                    placeholder="Position (e.g Software Developer)"
+                                    onChange={handleChange}
+                                    value={values.position}
+                                    required />
+                            </InputGroup>
                         </Form.Group>
                         <Button variant="primary" type="submit">
                             Submit

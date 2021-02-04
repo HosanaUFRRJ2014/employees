@@ -46,7 +46,14 @@
   background-color: lightgray;
 }
 
-.create-search-employee {
+.button-create-employee {
+  position: relative;
+  flex: 1 1 auto;
+  
+  width: 15%;
+}
+
+.search-employee {
   width: 80%;
   margin: auto;
   padding-top: 0.5%;
@@ -56,26 +63,34 @@
   align-items: stretch;
 }
 
-.button-create-employee {
-  position: relative;
-  flex: 1 1 auto;
-  margin-right: 0.5%;
-}
-
 .simple-search {
-  width: 65%;
-  margin: auto;
+  width: 70%;
+  margin: auto 1% auto auto;
   position: relative;
   flex: 1 1 auto;
 }
 
 .advanced-search {
-  margin: 0.5% auto auto auto;
+  margin: 1% auto;
   width: 80%;
+  position: relative;
+  flex: 1 1 auto;
+}
+
+.card-header-advanced-search {
+  padding: 0 0 0 auto;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #8fc5ff52;
 }
 
 .table-bordered {
   width: 80%;
   margin: auto;
   margin-top: 1%;
+}
+
+.table-striped {
+  background-color: #007bff12;
 }

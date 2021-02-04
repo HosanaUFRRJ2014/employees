@@ -5,8 +5,7 @@ import logo from './logo.svg';
 import './App.css';
 import { List } from  './components/employees/List';
 import { Search, AdvancedSearch } from './components/Search';
-import { Button } from 'react-bootstrap';
-import { Create } from './components/employees/Create';
+import { Create } from './components/employees/CreateOrUpdate';
 import { fetchList } from './api/fetchList';
 
 
@@ -32,11 +31,11 @@ class App extends React.Component {
 
   render() {
     return this.state.loading? null :  (<div>
-        <div className="empty-div"></div>
+        {/*<div className="empty-div"></div> */}
         <div>
-          <div className="create-search-employee">
-            <Create  existingUsernames={this.state.existingUsernames || []} />
+          <div className="search-employee">
             <Search />
+            <Create existingUsernames={this.state.existingUsernames || []} />
           </div>
           <AdvancedSearch />
         </div>
