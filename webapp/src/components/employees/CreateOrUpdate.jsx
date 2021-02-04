@@ -26,6 +26,7 @@ export function Create(props) {
                 show={show}
                 handleShow={handleShow}
                 handleClose={handleClose}
+                forceReload={() => window.location.reload()}
                 existingUsernames={props.existingUsernames}
                 modalTitle={"Register Employee"} />
         </>
@@ -44,7 +45,15 @@ export class CreateOrUpdateModal extends React.Component {
     }
 
     render() {
-        const { show, employee, handleClose, modalTitle, applyReadOnlyFields, existingUsernames, isUpdate } = this.props;
+        const { 
+            show, 
+            employee, 
+            handleClose, 
+            modalTitle, 
+            applyReadOnlyFields, 
+            existingUsernames, 
+            isUpdate,
+            forceReload } = this.props;
 
         return (
             <Modal
@@ -59,7 +68,8 @@ export class CreateOrUpdateModal extends React.Component {
                 </Modal.Header>
                 <Modal.Body>
                     <CreateOrUpdateForm 
-                        handleClose={handleClose} 
+                        handleClose={handleClose}
+                        forceReload={forceReload}
                         applyReadOnlyFields={applyReadOnlyFields} 
                         isUpdate={isUpdate} 
                         employee={employee} 
@@ -134,7 +144,10 @@ class CreateOrUpdateForm extends React.Component {
                 }}
                 onSubmit={(values, { setSubmitting }) => {
                     console.log("Submitting: ", values);
-                    this.submit(values).then(_ => this.props.handleClose());
+                    this.submit(values).then(_ => { 
+                        this.props.handleClose();
+                        this.props.forceReload(true);
+                    });
 
                 }}
             >

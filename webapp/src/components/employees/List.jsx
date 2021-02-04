@@ -105,6 +105,7 @@ export class List extends React.Component {
                 employee={selectedEmployee}
                 existingUsernames={existingUsernames}
                 applyReadOnlyFields={true}
+                forceReload={() => window.location.reload()}
                 isUpdate={true}
             />
         </>
