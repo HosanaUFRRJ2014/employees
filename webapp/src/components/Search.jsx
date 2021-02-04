@@ -3,7 +3,7 @@ import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react';
 
-export function Search() {
+export function Search(props) {
 
     return (
         <InputGroup className="simple-search">
@@ -12,8 +12,13 @@ export function Search() {
                     <FontAwesomeIcon icon={"search"} />
                 </InputGroup.Text>
             </InputGroup.Prepend>
-            <FormControl placeholder="First Name" />
-            <FormControl placeholder="Last Name" />
+            <FormControl 
+                name={"firstName"} 
+                onChange={props.filtering} 
+                placeholder="First Name" />
+            <FormControl 
+                name={"lastName"} 
+                onChange={props.filtering} placeholder="Last Name" />
         </InputGroup>
     );
 }

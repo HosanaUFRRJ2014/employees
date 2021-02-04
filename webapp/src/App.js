@@ -1,7 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { List } from  './components/employees/List';
 import { Search, AdvancedSearch } from './components/Search';
@@ -21,7 +20,8 @@ class App extends React.Component {
     fetchList().then(data => {
       let usernames = data.map(employee => employee.username);
       this.setState({
-        employees: data, 
+        allEmployees: data.slice(1, data.length),
+        employees: data.slice(1, data.length), 
         loading: false, 
         existingUsernames: usernames
       });
@@ -29,12 +29,27 @@ class App extends React.Component {
     })
   }
 
+  filtering = (event) => {
+    let attributeName = event.target.name;
+    let value = event.target.value;
+    
+    if(value && value.length >= 3) {
+      console.log("Chamou filtro para valor: ", value);
+
+      let filtered = this.state.employees.filter(employee => {
+        return employee[attributeName].toLowerCase().includes(value.toLowerCase());
+      });
+      this.setState({employees: filtered});
+    } else {
+      this.setState({employees: this.state.allEmployees});
+    }
+  }
+
   render() {
     return this.state.loading? null :  (<div>
-        {/*<div className="empty-div"></div> */}
         <div>
           <div className="search-employee">
-            <Search employees={this.state.employees || []}  />
+            <Search filtering={this.filtering} employees={this.state.employees || []}  />
             <Create existingUsernames={this.state.existingUsernames || []} />
           </div>
           <AdvancedSearch />
