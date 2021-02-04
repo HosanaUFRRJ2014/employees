@@ -33,16 +33,6 @@ export function AdvancedSearch() {
             </Card.Header>
             <Accordion.Collapse eventKey="0">
                 <Card.Body>
-                {/*<InputGroup className="mb-4">
-                    <InputGroup.Prepend>
-                    <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-                    </InputGroup.Prepend>
-                    <FormControl
-                        placeholder="Username"
-                        aria-label="Username"
-                        aria-describedby="basic-addon1"
-                    />
-                </InputGroup>*/}
                     <Form.Row>
                         <Form.Group as={Col} controlId="idCustomUsername">
                             <Form.Label>ID</Form.Label>
@@ -52,11 +42,6 @@ export function AdvancedSearch() {
                                     placeholder="ID"
                                     aria-describedby="inputGroupPrepend"
                                     name={"id"}
-                                   // onChange={handleChange}
-                                   // value={values.username}
-                                   // isInvalid={!!errors.username}
-                                   // disabled={this.props.applyReadOnlyFields}
-                                   // required
                                 />
                             </InputGroup>
                         </Form.Group>
@@ -68,11 +53,6 @@ export function AdvancedSearch() {
                                     placeholder="Age"
                                     aria-describedby="inputGroupPrepend"
                                     name={"age"}
-                                   // onChange={handleChange}
-                                   // value={values.username}
-                                   // isInvalid={!!errors.username}
-                                   // disabled={this.props.applyReadOnlyFields}
-                                   // required
                                 />
                             </InputGroup>
                         </Form.Group>
@@ -82,9 +62,6 @@ export function AdvancedSearch() {
                                 name={"birthdate"}
                                 type="date"
                                 placeholder="Birthdate"
-                               // onChange={handleChange}
-                               // value={values.birthdate}
-                                //required 
                                 />
                         </Form.Group>
                     </Form.Row>
@@ -102,11 +79,6 @@ export function AdvancedSearch() {
                                     placeholder="Position (e.g. Software Developer)"
                                     aria-describedby="inputGroupPrepend"
                                     name={"position"}
-                                   // onChange={handleChange}
-                                   // value={values.username}
-                                   // isInvalid={!!errors.username}
-                                   // disabled={this.props.applyReadOnlyFields}
-                                   // required
                                 />
                             </InputGroup>
                         </Form.Group>
@@ -121,11 +93,6 @@ export function AdvancedSearch() {
                                     placeholder="Username"
                                     aria-describedby="inputGroupPrepend"
                                     name={"username"}
-                                   // onChange={handleChange}
-                                   // value={values.username}
-                                   // isInvalid={!!errors.username}
-                                   // disabled={this.props.applyReadOnlyFields}
-                                   // required
                                 />
                             </InputGroup>
                         </Form.Group>

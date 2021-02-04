@@ -1,9 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useState } from 'react';
 import Table from 'react-bootstrap/Table'
 import { CreateOrUpdateModal } from './CreateOrUpdate';
-import { fetchList } from '../../api/fetchList';
 import { deleteEmployee } from '../../api/delete';
 
 export class List extends React.Component {
@@ -40,7 +38,6 @@ export class List extends React.Component {
         deleteEmployee(clickedEmployee.id).then(_ =>
             window.location.reload()
         );
-       // this.setState({[`garbage_${i}`]: undefined});
     }
 
     const handleShowGarbage = (i) => {
