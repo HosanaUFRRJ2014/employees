@@ -94,3 +94,12 @@
 .table-striped {
   background-color: #007bff12;
 }
+
+.table-actions {
+  text-align: center;
+}
+
+.table-actions-data {
+  color: #ff0000a9;
+  font-size: smaller;
+}

@@ -34,7 +34,7 @@ class App extends React.Component {
         {/*<div className="empty-div"></div> */}
         <div>
           <div className="search-employee">
-            <Search />
+            <Search employees={this.state.employees || []}  />
             <Create existingUsernames={this.state.existingUsernames || []} />
           </div>
           <AdvancedSearch />

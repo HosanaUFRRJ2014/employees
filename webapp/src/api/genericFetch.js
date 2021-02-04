@@ -21,12 +21,19 @@ export default function genericFetch(uri, method, bodyData = null) {
     }
 
     return fetch(uri, params)
-    .then(response => { return response.json()})
+    .then(response => { 
+        let jsonResponse = {};
+        console.log("response", response);
+        if (method !== 'DELETE')
+            jsonResponse = response.json();
+
+        return jsonResponse;
+    })
     .then(jsonResponse => {
         if(Array.isArray(jsonResponse))
             return jsonResponse.map(data => mapEmployeeToJson(data));
         else
-            return mapEmployeeToJson(jsonResponse);
+            return [mapEmployeeToJson(jsonResponse)];
     })
     .catch((error) => {
         console.error('Error:', error);
