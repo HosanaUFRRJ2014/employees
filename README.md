@@ -15,7 +15,7 @@ A simple CRUD of employees.
 Create a file in the root directory with the name `.env`. This must follow the
 `sample.env` template.
 
-## Database:
+## Database
 - Create database with the name, user, password and port you want.
 - Enter the database name, user, password and port in your `.env` file.
 
