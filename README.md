@@ -1,52 +1,63 @@
-# Pré-requisitos:
+A simple CRUD of employees.
+
+
+# Requirements:
 - Python >= 3.7 
 - Virtualenv >= 16.7.5
 - virtualenvwrapper = 4.8.4
 - Pip >= 20.2.2
 - PostgresSQL = 12.5
+- npm >= 12.X
 
-# Instalação:
+# Instalation:
 
-Crie um arquivo no diretório raiz com o nome `.env`. Este deverá seguir o 
-modelo de `sample.env`.
 
-## Base de dados:
-- Criar base de dados com o nome, usuário, senha e porta que desejar.
-- Informe o nome da base de dados, usuário, senha e porta no seu arquivo .env.
+Create a file in the root directory with the name `.env`. This must follow the
+`sample.env` template.
 
-Comandos de exemplo:
+## Database:
+- Create database with the name, user, password and port you want.
+- Enter the database name, user, password and port in your `.env` file.
+
+Commands:
 
         psql -U postgres
 
-        CREATE DATABASE employees;
+        CREATE DATABASE $YOUR_DATABASE_NAME_HERE;
 
-## Projeto
-- No diretório raiz, criar virtualenv
+## Project
+- Create a virtualenv in the root directory
 
         mkvirtualenv -p /path/to/your/python3.7 -a $(pwd) employee
 
-    Dica: Caso desative o virtualenv e precise ativá-lo novamente, use:
+    Hint: In case you deactivate your virtualenv and you need to activate it again, use:
 
         workon employee
 
-- Instalar bibliotecas
+- Install libraries
 
         pip install -r requirements.txt
 
 
-- Migrar modelos para a base de dados
+- Migrate models to the database
 
         python manage.py migrate
 
-- Criar superusuário (login e senha definidos aqui serão usados para acessar a API):
+- Create superuser (login and password defined here will be used to access the API)
 
         python manage.py createsuperuser
-    
-    Obs: É preciso realizar o login com a conta criada para superusuário para poder acessar os endpoints.
+       
+Note: It is necessary to login with the account created for superuser to be able to access the endpoints
 
-### Executar localmente:
+### Run backend locally
     python manage.py runserver
 
-
-### Abrir no browser:
+### Open in browser and log in
     localhost:8000
+
+### Run frontend locally
+    cd webapp
+    npm start
+
+### Open in browser
+    localhost:3000
